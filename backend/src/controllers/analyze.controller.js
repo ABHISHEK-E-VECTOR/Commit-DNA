@@ -1,24 +1,43 @@
+const { cloneRepo, deleteRepo } = require("../services/git.service");
+const simpleGit = require("simple-git");
+
 exports.analyzeRepo = async (req, res) => {
+  const { repoUrl } = req.body;
+
+  if (!repoUrl) {
+    return res.status(400).json({
+      error: "Repository URL is required"
+    });
+  }
+
+  let repoPath;
+
   try {
-    const { repoUrl } = req.body;
+    // 1️⃣ Clone
+    repoPath = await cloneRepo(repoUrl);
 
-    if (!repoUrl) {
-      return res.status(400).json({
-        error: "Repository URL is required",
-      });
-    }
+    // 2️⃣ Extract commit count
+    const git = simpleGit(repoPath);
+    const log = await git.log();
 
-    console.log("Received repo:", repoUrl);
+    const totalCommits = log.total;
 
+    // 3️⃣ Delete temp folder
+    deleteRepo(repoPath);
+
+    // 4️⃣ Send response
     res.json({
-      message: "Repo received successfully",
-      repoUrl,
+      totalCommits
     });
 
   } catch (error) {
-    console.error(error);
-    res.status(500).json({
-      error: "Something went wrong",
+
+    if (repoPath) {
+      deleteRepo(repoPath);
+    }
+
+    res.status(400).json({
+      error: error.message
     });
   }
 };
