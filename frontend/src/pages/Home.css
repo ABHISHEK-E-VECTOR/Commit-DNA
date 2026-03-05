@@ -1,0 +1,80 @@
+.hero {
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.repo-input input {
+  padding: 14px;
+  width: 350px;
+  border-radius: 6px;
+  border: none;
+}
+
+.repo-input button {
+  padding: 14px 20px;
+  margin-left: 10px;
+  border: none;
+  background: #2979ff;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* FEATURES */
+
+.features {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.feature-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* STEPS */
+
+.steps {
+  background: #f4f4f4;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 40px;
+}
+
+/* STATS */
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px;
+  background: #111;
+  color: white;
+}
