@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+    <div class="dashboard-box">
+        <h2>Developer Activity Dashboard</h2>
+        <form>
+            <input type="text" placeholder="Repo URL" required>
+          <input type="text" placeholder="Username" required>
+          <br>
+          <label for="Analysis"></label>
+          <select id="Analysis" name="Analysis">
+                <option value="">Select </option>
+                <option value="commit activity">commit activity</option>
+                <option value="bug v/s refractor ratio">bug v/s refractor ratio</option>
+                <option value="burnout analysis">burnout analysis</option>
+          </select>
+
+
+            <br><button type="submit">Analyze</button></br>
+        </form>
+    </div>
+</body>
+</html>
