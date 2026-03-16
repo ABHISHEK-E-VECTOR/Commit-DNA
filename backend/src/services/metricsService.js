@@ -1,5 +1,10 @@
-const { BUG_KEYWORDS, REFACTOR_KEYWORDS } = require('../utils/keywords');
 const dayjs = require('dayjs');
+
+// Bug-related keywords (inlined – no external utils dependency)
+const BUG_KEYWORDS = ['fix', 'bug', 'patch', 'hotfix', 'issue', 'error', 'crash', 'fault', 'defect', 'resolve'];
+
+// Refactor-related keywords
+const REFACTOR_KEYWORDS = ['refactor', 'cleanup', 'clean up', 'restructure', 'reorganize', 'rewrite', 'optimize', 'improve'];
 
 //Checks if a string contains any of the keywords.
 const containsKeyword = (text, keywords) => {
@@ -103,3 +108,4 @@ const calculateMetrics = (commits, developerName = null) => {
 module.exports = {
     calculateMetrics
 };
+
